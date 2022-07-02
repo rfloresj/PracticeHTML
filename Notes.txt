@@ -89,5 +89,23 @@ To use an external style sheet, add a link to it in the <head> section of each H
 </body>
 </html>
 
+CSS Padding
+The CSS padding property defines a padding (space) between the text and the border.
 
--->
+CSS Margin
+The CSS margin property defines a margin (space) outside the border.
+
+Use the HTML style attribute for inline styling
+Use the HTML <style> element to define internal CSS
+Use the HTML <link> element to refer to an external CSS file
+Use the HTML <head> element to store <style> and <link> elements
+Use the CSS color property for text colors
+Use the CSS font-family property for text fonts
+Use the CSS font-size property for text sizes
+Use the CSS border property for borders
+Use the CSS padding property for space inside the border
+Use the CSS margin property for space outside the border
+
+Tag	Description
+<style>	Defines style information for an HTML document
+<link>	Defines a link between a document and an external resource
