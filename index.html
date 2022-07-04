@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="Practice.css">
 </head>
 
 <body>
+    <p><a href="#tomato">Jump to Tomato</a></p>
     <p>HOLA A TODOS</p>
     <h1 style="text-align: center;">My First Heading</h1>
     <p style="color: blue;">My first paragraph (blue)</p>
@@ -19,7 +21,9 @@
     <p>This <sub>is another</sub><sup>paragraph</sup><br> <sup>paragraph</sup></p>
     <a href="https://www.w3schools.com">Visit W3Schools</a>
     <p style="font-size: 200%;" title="I'm a tooltip"> This is a <del>paragraph</del></p>
+    <a href="https://docs.microsoft.com/es-es/dotnet/api/system.windows.media.colors?view=windowsdesktop-6.0" target="_blank">
     <img src="https://www.w3schools.com/images/colorpicker.png" alt="W3Schools.com" width="160" height="142">
+    </a>
     <br>
     <br>
     <pre>
@@ -37,12 +41,19 @@ HolaHolaHola
     </p>
     <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
     <bdo dir="rtl">This line will be written from right to left</bdo>
-    <h1 style="border:6px solid tomato; text-align: center;">Tomato</h1>
+    <h1 id="tomato" style="border:6px solid tomato; text-align: center;">Tomato</h1>
     <h1 style="background-color: rgba(0,255,0, 0.7); text-align: center; color:rgb(0, 0, 0);border:5px solid black;">Hello World</h1>
     <p>Box 1</p>
     <p>Box 1</p>
     <p>Box 1</p>
     <script src="js/app.js"></script>
+    <a id="linkbutton1" href="https://www.w3schools.com/" target="_blank" title="Go to our Website and learn more">Visit W3Schools.com</a>
+    <br>
+    <button onclick="document.location='https://www.w3schools.com/'" >Site Location</button>
+    <p id="float1" style="background-image: https://cdn.pixabay.com/photo/2022/06/21/21/56/konigssee-7276585_960_720.jpg;">
+        <img src="https://www.w3schools.com/html/smiley.gif" style="float: left; width: 42px; height: 42px;"> 
+        paragraph with a floating image. A paragraph with a floating image. A paragraph with a floating image.
+    </p>
 </body>
 </html>
 

@@ -109,3 +109,140 @@ Use the CSS margin property for space outside the border
 Tag	Description
 <style>	Defines style information for an HTML document
 <link>	Defines a link between a document and an external resource
+--LINKS--
+
+The HTML <a> tag defines a hyperlink. It has the following syntax:
+<a href="https://www.w3schools.com/">Visit W3Schools.com!</a>
+The target attribute specifies where to open the linked document.
+The target attribute can have one of the following values:
+_self - Default. Opens the document in the same window/tab as it was clicked
+_blank - Opens the document in a new window or tab
+_parent - Opens the document in the parent frame
+_top - Opens the document in the full body of the window
+<a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a>
+Image as a link
+<a href="default.asp">
+<img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+</a>
+
+Use mailto: inside the href attribute to create a link that opens the user's email program (to let them send a new email)
+<a href="mailto:someone@example.com">Send email</a>
+Link to a page located in the html folder on the current web site: 
+<a href="/html/default.asp">HTML tutorial</a>
+Link to a page located in the same folder as the current page: 
+<a href="default.asp">HTML tutorial</a>
+
+Use the <a> element to define a link
+Use the href attribute to define the link address
+Use the target attribute to define where to open the linked document
+Use the <img> element (inside <a>) to use an image as a link
+Use the mailto: scheme inside the href attribute to create a link that opens the user's email program
+<a>	Defines a hyperlink
+-Link Bookmarks-
+Use the id attribute (id="value") to define bookmarks in a page
+Use the href attribute (href="#value") to link to the bookmark
+
+--HTML Images--
+The HTML <img> tag is used to embed an image in a web page.
+
+Images are not technically inserted into a web page; images are linked to web pages. The <img> tag creates a holding space for the referenced image.
+
+The <img> tag is empty, it contains attributes only, and does not have a closing tag.
+
+The <img> tag has two required attributes:
+
+src - Specifies the path to the image
+alt - Specifies an alternate text for the image
+<img src="url" alt="alternatetext">
+
+Here are the most common image file types, which are supported in all browsers (Chrome, Edge, Firefox, Safari, Opera):
+APNG	Animated Portable Network Graphics	.apng
+GIF	Graphics Interchange Format	.gif
+ICO	Microsoft Icon	.ico, .cur
+JPEG	Joint Photographic Expert Group image	.jpg, .jpeg, .jfif, .pjpeg, .pjp
+PNG	Portable Network Graphics	.png
+SVG	Scalable Vector Graphics	.svg
+
+Use the HTML <img> element to define an image
+Use the HTML src attribute to define the URL of the image
+Use the HTML alt attribute to define an alternate text for an image, if it cannot be displayed
+Use the HTML width and height attributes or the CSS width and height properties to define the size of the image
+Use the CSS float property to let the image float to the left or to the right
+
+!Note: Loading large images takes time, and can slow down your web page. Use images carefully!
+
+Tag	Description
+<img>	Defines an image
+<map>	Defines an image map
+<area>	Defines a clickable area inside an image map
+<picture>	Defines a container for multiple image resources
+
+The HTML <map> tag defines an image map. An image map is an image with clickable areas. The areas are defined with one or more <area> tags.
+Try to click on the computer, phone, or the cup of coffee in the image below:
+
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+</map>
+
+Shape
+You must define the shape of the clickable area, and you can choose one of these values:
+
+rect - defines a rectangular region
+circle - defines a circular region
+poly - defines a polygonal region
+default - defines the entire region
+
+You must also define some coordinates to be able to place the clickable area onto the image. 
+
+Background Image on a HTML element
+To add a background image on an HTML element, use the HTML style attribute and the CSS background-image property:
+
+Add a background image on a HTML element:
+
+<p style="background-image: url('img_girl.jpg');">
+
+body{
+    background-image: url('https://cdn.pixabay.com/photo/2022/06/21/21/56/konigssee-7276585_960_720.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+The HTML <picture> element allows you to display different pictures for different devices or screen sizes.
+Show different images for different screen sizes:
+
+<picture>
+  <source media="(min-width: 650px)" srcset="img_food.jpg">
+  <source media="(min-width: 465px)" srcset="img_car.jpg">
+  <img src="img_girl.jpg">
+</picture>
+The img element is required as the last child tag of the picture declaration block.
+The img element is used to provide backward compatibility for browsers that do not support the picture element, or if none of the source tags matched.
+Note: The picture element is not supported in IE12 and earlier or Safari 9.0 and earlier.
+
+There are two main purposes for the <picture> element:
+
+1. Bandwidth
+If you have a small screen or device, it is not necessary to load a large image file. The browser will use the first <source> element with matching attribute values, and ignore any of the following elements.
+
+2. Format Support
+Some browsers or devices may not support all image formats. By using the <picture> element, you can add images of all formats, and the browser will use the first format it recognizes, and ignore any of the following elements.
+
+--HTML Favicon--
+A favicon is a small image displayed next to the page title in the browser tab.
+How To Add a Favicon in HTML
+You can use any image you like as your favicon. You can also create your own favicon on sites like https://www.favicon.cc.
+
+The following table shows the file format support for a favicon image:
+
+Browser	ICO	PNG	GIF	JPEG	SVG
+Edge	Yes	Yes	Yes	Yes	Yes
+Chrome	Yes	Yes	Yes	Yes	Yes
+Firefox	Yes	Yes	Yes	Yes	Yes
+Opera	Yes	Yes	Yes	Yes	Yes
+Safari	Yes	Yes	Yes	Yes	Yes
+
+--HTML Tables--

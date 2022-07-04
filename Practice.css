@@ -9,10 +9,28 @@ p {
     font-family: courier;
     font-size: 100%;
 } */
+#float1{
+   background-image: url('https://cdn.pixabay.com/photo/2022/06/21/21/56/konigssee-7276585_960_720.jpg');
+   background-size:100% 100%;
+   border: none;
+   font-size: 40px;
+   color: white;
+}
 
 p {
     text-align: center;
     border: 2px solid black;
-    padding: 20px;
+    padding: 50px;
     margin: 10px;
+}
+#linkbutton1:link, #linkbutton1:visited{
+    background-color: #f44336;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+#linkbutton1:hover, #linkbutton1:active{
+    background-color: red;
 }
