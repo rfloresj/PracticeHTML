@@ -246,43 +246,6 @@ Opera	Yes	Yes	Yes	Yes	Yes
 Safari	Yes	Yes	Yes	Yes	Yes
 
 --HTML Tables--
-
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-CSS ANIMATIONS
---HTML--
-<div id="cuadrado"></div>
-
---CSS--
-#cuadrado {
-  width: 200px;
-  height: 200px;
-  background: #aaa;
-  animation-name: mianimacion;
-  animation-duration: 4s;
-  /*animation-delay: 2s;*/
-  position: relative;
-  animation-direction: reverse;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
-}
-
-@keyframes mianimacion {
-  0% {background:#aaa;left: 0px;top:0px;}
-  25% {background:red;left:300px;top:0px}
-  50% {background:green;left:300px;top:300px}
-  75% {background:pink;left:0px;top:300px}
-  100% {background:blue;left:0;top:0px}
-}
 =======
 Each table cell is defined by a <td> and a </td> tag.
 td stands for table data.
@@ -326,4 +289,39 @@ With the border-style property, you can set the appereance of the border.
 The following values are allowed:
 dotted dashed solid double groove ridge inset outset none hidden
 
->>>>>>> aefb8756c180ba85cf839b6bea324d9fd05645c3
+
+
+
+
+
+
+
+
+
+
+
+CSS ANIMATIONS
+--HTML--
+<div id="cuadrado"></div>
+
+--CSS--
+#cuadrado {
+  width: 200px;
+  height: 200px;
+  background: #aaa;
+  animation-name: mianimacion;
+  animation-duration: 4s;
+  /*animation-delay: 2s;*/
+  position: relative;
+  animation-direction: reverse;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes mianimacion {
+  0% {background:#aaa;left: 0px;top:0px;}
+  25% {background:red;left:300px;top:0px}
+  50% {background:green;left:300px;top:300px}
+  75% {background:pink;left:0px;top:300px}
+  100% {background:blue;left:0;top:0px}
+}
