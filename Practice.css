@@ -34,3 +34,14 @@ p {
 #linkbutton1:hover, #linkbutton1:active{
     background-color: red;
 }
+
+    table, tr,th,td{
+    border: 1px solid black;
+    /* border-radius: 1px; */
+    border-collapse:collapse;
+    /* border-style: dotted; */
+}
+th, td{
+    text-align: left;
+    background-color: #96d4d4;
+}
