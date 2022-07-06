@@ -35,13 +35,26 @@ p {
     background-color: red;
 }
 
-    table, tr,th,td{
+/* table, tr,th,td{
+/*     border-spacing: 10px; 
     border: 1px solid black;
-    /* border-radius: 1px; */
+    /* border-radius: 1px; 
     border-collapse:collapse;
-    /* border-style: dotted; */
+     border-style: dotted;
 }
-th, td{
+ */
+/* th, td{
     text-align: left;
-    background-color: #96d4d4;
+    background-color: white;
+} */
+
+table{
+    border-collapse: collapse;
+    width: 100%;
 }
+
+tr {
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover{background-color: #f44336;}

@@ -289,6 +289,82 @@ With the border-style property, you can set the appereance of the border.
 The following values are allowed:
 dotted dashed solid double groove ridge inset outset none hidden
 
+-Padding-
+Cell padding is the space between the cell edges and the cell content.
+By default the padding is set to 0.
+To add padding on table cells, use the CSS padding property:
+
+th, td {
+  padding: 15px;
+}
+
+To add padding only above the content, use the padding-top property.
+And the others sides with the padding-bottom, padding-left, and padding-right properties:
+Example
+th, td {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+-Cell Spacing-
+Cell spacing is the space between each cell.
+By default the space is set to 2 pixels.
+table {
+  border-spacing: 30px;
+}
+
+-Colspan & Rowspan-y
+<table>
+  <tr>
+    <th colspan="2">Name</th>
+    <th>Age</th>
+  </tr>
+
+<tr>
+    <th rowspan="2">P
+    hone</th>
+    <td>555-1234</td>
+  </tr>
+
+-Table - Zebra Stripes-
+If you add a background color on every other table row, you will get a nice zebra stripes effect.
+To style every other table row element, use the :nth-child(even) selector like this:
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+Note: If you use (odd) instead of (even), the styling will occur on row 1,3,5 etc. instead of 2,4,6 etc.
+Set the :nth-child(even) for table data elements like this:
+td:nth-child(even), th:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+Put the :nth-child() selector on both th and td elements if you want to have the styling on both headers and regular table cells.
+Use an rgba() color to specify the transparency of the color:
+tr:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+
+th:nth-child(even),td:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+
+-Horizontal Dividers-
+
+If you specify borders only at the bottom of each table row, you will have a table with horizontal dividers.
+
+Add the border-bottom property to all tr elements to get horizontal dividers:
+
+Example
+tr {
+  border-bottom: 1px solid #ddd;
+}
+
+-Hoverable Table- *
+Use the :hover selector on tr to highlight table rows on mouse over:
+tr:hover {background-color: #D6EEEE;}
 
 
 
