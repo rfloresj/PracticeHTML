@@ -823,6 +823,48 @@ scale up to be larger than its original size.
 
 -Show Different Images Depending on Browser Width-
 
+<picture>
+  <source srcset="img_smallflower.jpg" media="(max-width: 600px)">
+  <source srcset="img_flowers.jpg" media="(max-width: 1500px)">
+  <source srcset="flowers.jpg">
+  <img src="img_smallflower.jpg" alt="Flowers">
+</picture>
+
+-Responsive Text Size-
+
+The text size can be set with a "vw" unit, which means the "viewport width".
+
+That way the text size will follow the size of the browser window.
+
+<h1 style="font-size:8vw;">Responsive Text</h1>
+
+<p style="font-size:5vw;">Resize the browser window to see how the text size scales.</p>
+
+<p style="font-size:5vw;">Use the "vw" unit when sizing the text. 10vw will set the size to 10% of the viewport width.</p>
+
+<p>Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.</p>
+
+-Media Queries-
+
+In addition to resize text and images, it is also common to use media queries in responsive web pages.
+
+With media queries you can define completely different styles for different browser sizes.
+
+Example: resize the browser window to see that the three div elements below will display horizontally 
+on large screens and stacked vertically on small screens.
+
+-Responsive Web Design - Frameworks-
+
+All popular CSS Frameworks offer responsive design.
+
+They are free, and easy to use.
+
+-Bootstrap-
+
+Another popular CSS framework is Bootstrap. Bootstrap uses HTML, CSS and jQuery to make responsive web pages.
+
+--HTML Computer Code Elements--
+
 
 
 
