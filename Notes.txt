@@ -1302,17 +1302,247 @@ usually you can set up as many default filenames as you want.
 
 --HTML Entities--
 
+Reserved characters in HTML must be replaced with character entities.
+
+Some characters are reserved in HTML.
+
+If you use the less than (<) or greater than (>) signs in your text, the browser might mix them with tags.
+
+Character entities are used to display reserved characters in HTML.
+
+A character entity looks like this:
+
+&entity_name;
+OR
+
+&#entity_number;
+
+*To display a less than sign (<) we must write: &lt; or &#60;*
+
+Advantage of using an entity name: An entity name is easy to remember.
+Disadvantage of using an entity name: Browsers may not support all entity names, but the support for entity numbers is good.
+
+-Non-breaking Space-
+
+A commonly used entity in HTML is the non-breaking space: &nbsp;
+
+A non-breaking space is a space that will not break into a new line.
+
+Two words separated by a non-breaking space will stick together (not break into a new line). This is handy when breaking the words might be disruptive.
+
+Examples:
+
+§ 10
+10 km/h
+10 PM
+Another common use of the non-breaking space is to prevent browsers from truncating spaces in HTML pages.
+
+If you write 10 spaces in your text, the browser will remove 9 of them. To add real spaces to your text, you can use the &nbsp; character entity.
+
+*Price of this beer: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wait for it... &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5 $*
+
+*Tip: The non-breaking hyphen (&#8209;) is used to define a hyphen character (‑) that does not break into a new line.*
+
+	non-breaking space	&nbsp;	&#160;	
+<	less than	&lt;	&#60;	
+>	greater than	&gt;	&#62;	
+&	ampersand	&amp;	&#38;	
+"	double quotation mark	&quot;	&#34;	
+'	single quotation mark (apostrophe)	&apos;	&#39;	
+¢	cent	&cent;	&#162;	
+£	pound	&pound;	&#163;	
+¥	yen	&yen;	&#165;	
+€	euro	&euro;	&#8364;	
+©	copyright	&copy;	&#169;	
+®	registered trademark	&reg;	&#174;
+
+Note: Entity names are case sensitive.
+
+-Combining Diacritical Marks-
+
+A diacritical mark is a "glyph" added to a letter.
+
+Some diacritical marks, like grave (  ̀) and acute (  ́) are called accents.
+
+Diacritical marks can appear both above and below a letter, inside a letter, and between two letters.
+
+Diacritical marks can be used in combination with alphanumeric characters to produce a character that is not present in the character set (encoding) used in the page.
+
+Here are some examples:
 
 
+Mark	Character	Construct	Result	Try it
+ ̀	a	a&#768;	à	
+ ́	a	a&#769;	á	
+̂	a	a&#770;	â	
+ ̃	a	a&#771;	ã	
+ ̀	O	O&#768;	Ò	
+ ́	O	O&#769;	Ó	
+̂	O	O&#770;	Ô	
+ ̃	O	O&#771;	Õ
 
+--HTML Symbols--
 
+Symbols that are not present on your keyboard can also be added by using entities.
 
+-HTML Symbol Entities-
 
+HTML entities were described in the previous chapter.
 
+Many mathematical, technical, and currency symbols, are not present on a normal keyboard.
 
+To add such symbols to an HTML page, you can use the entity name or the entity number (a decimal or a hexadecimal reference) for the symbol.
 
+Display the euro sign, €, with an entity name, a decimal, and a hexadecimal value:
 
+<p>I will display &euro;</p>
+<p>I will display &#8364;</p>
+<p>I will display &#x20AC;</p>
 
+Will display as:
+I will display €
+I will display €
+I will display €
+
+Some Mathematical Symbols Supported by HTML
+Char	Number	Entity	Description	Try it
+∀	&#8704;	&forall;	FOR ALL	
+∂	&#8706;	&part;	PARTIAL DIFFERENTIAL	
+∃	&#8707;	&exist;	THERE EXISTS	
+∅	&#8709;	&empty;	EMPTY SETS	
+∇	&#8711;	&nabla;	NABLA	
+∈	&#8712;	&isin;	ELEMENT OF	
+∉	&#8713;	&notin;	NOT AN ELEMENT OF	
+∋	&#8715;	&ni;	CONTAINS AS MEMBER	
+∏	&#8719;	&prod;	N-ARY PRODUCT	
+∑	&#8721;	&sum;	N-ARY SUMMATION
+
+Some Greek Letters Supported by HTML
+Char	Number	Entity	Description	Try it
+Α	&#913;	&Alpha;	GREEK CAPITAL LETTER ALPHA	
+Β	&#914;	&Beta;	GREEK CAPITAL LETTER BETA	
+Γ	&#915;	&Gamma;	GREEK CAPITAL LETTER GAMMA	
+Δ	&#916;	&Delta;	GREEK CAPITAL LETTER DELTA	
+Ε	&#917;	&Epsilon;	GREEK CAPITAL LETTER EPSILON	
+Ζ	&#918;	&Zeta;	GREEK CAPITAL LETTER ZETA
+
+Some Other Entities Supported by HTML
+Char	Number	Entity	Description	Try it
+©	&#169;	&copy;	COPYRIGHT SIGN	
+®	&#174;	&reg;	REGISTERED SIGN	
+€	&#8364;	&euro;	EURO SIGN	
+™	&#8482;	&trade;	TRADEMARK	
+←	&#8592;	&larr;	LEFTWARDS ARROW	
+↑	&#8593;	&uarr;	UPWARDS ARROW	
+→	&#8594;	&rarr;	RIGHTWARDS ARROW	
+↓	&#8595;	&darr;	DOWNWARDS ARROW	
+♠	&#9824;	&spades;	BLACK SPADE SUIT	
+♣	&#9827;	&clubs;	BLACK CLUB SUIT	
+♥	&#9829;	&hearts;	BLACK HEART SUIT	
+♦	&#9830;	&diams;	BLACK DIAMOND SUIT
+
+--Using Emojis in HTML--
+
+Emojis are characters from the UTF-8 character set: 😄 😍 💗
+
+What are Emojis?
+Emojis look like images, or icons, but they are not.
+
+They are letters (characters) from the UTF-8 (Unicode) character set.
+
+UTF-8 covers almost all of the characters and symbols in the world.
+
+-The HTML charset Attribute-
+
+To display an HTML page correctly, a web browser must know the character set used in the page.
+
+This is specified in the <meta> tag:
+
+<meta charset="UTF-8">
+If not specified, UTF-8 is the default character set in HTML.
+
+-UTF-8 Characters-
+
+Many UTF-8 characters cannot be typed on a keyboard, but they can always be displayed using numbers (called entity numbers):
+
+A is 65
+B is 66
+C is 67
+
+<p>I will display A B C</p>
+<p>I will display &#65; &#66; &#67;</p>
+
+-Emoji Characters-
+
+Emojis are also characters from the UTF-8 alphabet:
+
+😄 is 128516
+😍 is 128525
+💗 is 128151
+
+<h1>My First Emoji</h1>
+
+<p>&#128512;</p>
+
+Since Emojis are characters, they can be copied, displayed, and sized just like any other character in HTML.
+
+<p style="font-size:48px">
+&#128512; &#128516; &#128525; &#128151;
+</p>
+
+Some Emoji Symbols in UTF-8
+Emoji	Value	Try it
+🗻	&#128507;	
+🗼	&#128508;	
+🗽	&#128509;	
+🗾	&#128510;	
+🗿	&#128511;	
+😀	&#128512;	
+😁	&#128513;	
+😂	&#128514;	
+😃	&#128515;	
+😄	&#128516;	
+😅	&#128517;	
+
+--HTML Encoding (Character Sets)--
+
+To display an HTML page correctly, a web browser must know which character set to use.
+
+-From ASCII to UTF-8-
+
+ASCII was the first character encoding standard. ASCII defined 128 different characters 
+that could be used on the internet: numbers (0-9), English letters (A-Z), and some special characters like ! $ + - ( ) @ < > .
+
+ISO-8859-1 was the default character set for HTML 4. This character set supported 256 different character codes. HTML 4 also supported UTF-8.
+
+ANSI (Windows-1252) was the original Windows character set. ANSI is identical to ISO-8859-1, except that ANSI has 32 extra characters.
+
+The HTML5 specification encourages web developers to use the UTF-8 character set, which covers almost all of the characters and symbols in the world!
+
+-The ASCII Character Set-
+ASCII uses the values from 0 to 31 (and 127) for control characters.
+
+ASCII uses the values from 32 to 126 for letters, digits, and symbols.
+
+ASCII does not use the values from 128 to 255.
+
+-The ANSI Character Set (Windows-1252)-
+ANSI is identical to ASCII for the values from 0 to 127.
+
+ANSI has a proprietary set of characters for the values from 128 to 159.
+
+ANSI is identical to UTF-8 for the values from 160 to 255.
+
+-The UTF-8 Character Set-
+UTF-8 is identical to ASCII for the values from 0 to 127.
+
+UTF-8 does not use the values from 128 to 159. 
+
+UTF-8 is identical to both ANSI and 8859-1 for the values from 160 to 255.
+
+UTF-8 continues from the value 256 with more than 10 000 different characters.
+
+--HTML Uniform Resource Locators--
 
 
 
