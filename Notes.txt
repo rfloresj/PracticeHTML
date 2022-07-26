@@ -1786,7 +1786,400 @@ Checkboxes let a user select ZERO or MORE options of a limited number of choices
   <label for="vehicle3"> I have a boat</label>
 </form>
 
+-The Submit Button-
 
+The <input type="submit"> defines a button for submitting the form data to a form-handler.
+
+The form-handler is typically a file on the server with a script for processing input data.
+
+The form-handler is specified in the form's action attribute.
+
+-The Name Attribute for <input>-
+
+Notice that each input field must have a name attribute to be submitted.
+
+If the name attribute is omitted, the value of the input field will not be sent at all.
+
+Example
+This example will not submit the value of the "First name" input field: 
+
+<form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" value="John"><br><br>  // name="fname"
+  <input type="submit" value="Submit">
+</form>
+
+--HTML Form Attributes--
+-The Action Attribute-
+
+The action attribute defines the action to be performed when the form is submitted.
+
+Usually, the form data is sent to a file on the server when the user clicks on the submit button.
+
+In the example below, the form data is sent to a file called "action_page.php". This file contains a server-side script that handles the form data:
+
+Example
+On submit, send form data to "action_page.php":
+
+<form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+Tip: If the action attribute is omitted, the action is set to the current page.
+
+-The Target Attribute-
+
+The target attribute specifies where to display the response that is received after submitting the form.
+
+The target attribute can have one of the following values:
+
+Value	  Description
+_blank	The response is displayed in a new window or tab
+_self	The response is displayed in the current window
+_parent	The response is displayed in the parent frame
+_top	The response is displayed in the full body of the window
+framename	The response is displayed in a named iframe
+
+The default value is _self which means that the response will open in the current window.
+
+Example
+Here, the submitted result will open in a new browser tab:
+
+<form action="/action_page.php" target="_blank">
+
+-The Method Attribute-
+
+The method attribute specifies the HTTP method to be used when submitting the form data.
+
+The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
+
+The default HTTP method when submitting form data is GET.
+
+Example
+This example uses the GET method when submitting the form data:
+
+<form action="/action_page.php" method="get">
+
+This example uses the POST method when submitting the form data:
+
+<form action="/action_page.php" method="post">
+
+After you submit, notice that, unlike the GET method, the form values is NOT visible in the address bar of the new browser tab.
+
+Notes on GET:
+
+*Appends the form data to the URL, in name/value pairs*
+NEVER use GET to send sensitive data! (the submitted form data is visible in the URL!)
+The length of a URL is limited (2048 characters)
+Useful for form submissions where a user wants to bookmark the result
+GET is good for non-secure data, like query strings in Google
+Notes on POST:
+
+*Appends the form data inside the body of the HTTP request (the submitted form data is not shown in the URL)*
+POST has no size limitations, and can be used to send large amounts of data.
+Form submissions with POST cannot be bookmarked
+
+-The Autocomplete Attribute-
+
+The autocomplete attribute specifies whether a form should have autocomplete on or off.
+
+When autocomplete is on, the browser automatically complete values based on values that the user has entered before.
+
+A form with autocomplete on:
+
+<form action="/action_page.php" autocomplete="on">
+
+*-The Novalidate Attribute-*
+
+The novalidate attribute is a boolean attribute.
+
+When present, it specifies that the form-data (input) should not be validated when submitted.
+
+A form with a novalidate attribute:
+
+<form action="/action_page.php" novalidate>
+
+Note:The novalidate attribute of the form tag is not supported in Safari 10 (or earlier).
+
+Attribute	      Description
+accept-charset	Specifies the character encodings used for form submission
+action	Specifies where to send the form-data when a form is submitted
+autocomplete	Specifies whether a form should have autocomplete on or off
+enctype	Specifies how the form-data should be encoded when submitting it to the server (only for method="post")
+method	Specifies the HTTP method to use when sending form-data
+name	Specifies the name of the form
+novalidate	Specifies that the form should not be validated when submitted
+rel	Specifies the relationship between a linked resource and the current document
+target	Specifies where to display the response that is received after submitting the form
+
+--HTML Form Elements--
+
+-The HTML <form> Elements-
+The HTML <form> element can contain one or more of the following form elements:
+
+<input>
+<label>
+<select>
+<textarea>
+<button>
+<fieldset>
+<legend>
+<datalist>
+<output>
+<option>
+<optgroup>
+
+-The <input> Element-
+One of the most used form element is the <input> element.
+
+The <input> element can be displayed in several ways, depending on the type attribute.
+
+<label for="fname">First name:</label>
+<input type="text" id="fname" name="fname">
+
+-The <label> Element-
+
+he <label> element defines a label for several form elements.
+
+The <label> element is useful for screen-reader users, because the screen-reader will read out loud the label when the user focus on the input element.
+
+The <label> element also help users who have difficulty clicking on very small regions (such as radio buttons or checkboxes) - 
+because when the user clicks the text within the <label> element, it toggles the radio button/checkbox.
+
+The for attribute of the <label> tag should be equal to the id attribute of the <input> element to bind them together.
+
+-The <select> Element-
+
+The <select> element defines a drop-down list:
+
+Example
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+
+The <option> elements defines an option that can be selected.
+
+By default, the first item in the drop-down list is selected.
+
+To define a pre-selected option, add the selected attribute to the option:
+
+Example
+<option value="fiat" selected>Fiat</option>
+
+-Visible Values-
+
+Use the size attribute to specify the number of visible values:
+
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars" size="3">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+
+Allow Multiple Selections:
+
+Use the multiple attribute to allow the user to select more than one value:
+
+Example
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars" size="4" multiple>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+
+-The <textarea> Element-
+
+The <textarea> element defines a multi-line input field (a text area):
+
+<textarea name="message" rows="10" cols="30">
+The cat was playing in the garden.
+</textarea>
+
+The rows attribute specifies the visible number of lines in a text area.
+
+The cols attribute specifies the visible width of a text area.
+
+You can also define the size of the text area by using CSS:
+
+<textarea name="message" style="width:200px; height:600px;">
+The cat was playing in the garden.
+</textarea>
+
+*-The <button> Element-*
+
+The <button> element defines a clickable button:
+
+<button type="button" onclick="alert('Hello World!')">Click Me!</button>
+
+Note: Always specify the type attribute for the button element. Different browsers may use different default types for the button element.
+
+-The <fieldset> and <legend> Elements-
+
+The <fieldset> element is used to group related data in a form.
+
+The <legend> element defines a caption for the <fieldset> element.
+
+<form action="/action_page.php">
+  <fieldset>
+    <legend>Personalia:</legend>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+
+-The <datalist> Element-
+
+The <datalist> element specifies a list of pre-defined options for an <input> element.
+
+Users will see a drop-down list of the pre-defined options as they input data.
+
+The list attribute of the <input> element, must refer to the id attribute of the <datalist> element.
+
+Example
+<form action="/action_page.php">
+  <input list="browsers">
+  <datalist id="browsers">
+    <option value="Internet Explorer">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+</form>
+
+Note: The datalist tag is not supported in Safari prior version 12.1.
+
+*-The <output> Element-*
+
+The <output> element represents the result of a calculation (like one performed by a script).
+
+Perform a calculation and show the result in an <output> element:
+
+<form action="/action_page.php"
+  oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  0
+  <input type="range"  id="a" name="a" value="50">
+  100 +
+  <input type="number" id="b" name="b" value="50">
+  =
+  <output name="x" for="a b"></output>
+  <br><br>
+  <input type="submit">
+</form>
+
+Note: The output element is not supported in Edge prior version 13.
+
+Tag	Description
+<form>	Defines an HTML form for user input
+<input>	Defines an input control
+<textarea>	Defines a multiline input control (text area)
+<label>	Defines a label for an <input> element
+<fieldset>	Groups related elements in a form
+<legend>	Defines a caption for a <fieldset> element
+<select>	Defines a drop-down list
+<optgroup>	Defines a group of related options in a drop-down list
+<option>	Defines an option in a drop-down list
+<button>	Defines a clickable button
+<datalist>	Specifies a list of pre-defined options for input controls
+<output>	Defines the result of a calculation
+
+--Input Types--
+
+-HTML Input Types-
+Here are the different input types you can use in HTML:
+
+<input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="email">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="password">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="submit">
+<input type="tel">
+<input type="text">
+<input type="time">
+<input type="url">
+<input type="week">
+
+Tip: The default value of the type attribute is "text".
+
+-Input Type Text-
+<input type="text"> defines a single-line text input field:
+
+-Input Type Password-
+<input type="password"> defines a password field:
+
+Example
+<form>
+  <label for="username">Username:</label><br>
+  <input type="text" id="username" name="username"><br>
+  <label for="pwd">Password:</label><br>
+  <input type="password" id="pwd" name="pwd">
+</form>
+
+The characters in a password field are masked (shown as asterisks or circles).
+
+-Input Type Submit-
+
+<input type="submit"> defines a button for submitting form data to a form-handler.
+
+The form-handler is typically a server page with a script for processing input data.
+
+The form-handler is specified in the form's action attribute:
+
+Example
+<form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+If you omit the submit button's value attribute, the button will get a default text: ->submit<-
+
+-Input Type Reset-
+
+<input type="reset"> defines a reset button that will reset all form values to their default values:
+
+Example
+<form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+  <input type="reset">
+</form>
+
+If you change the input values and then click the "Reset" button, the form-data will be reset to the default values.
+
+-Input Type Radio-
 
 
 
